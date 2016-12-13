@@ -12,12 +12,14 @@ class Aligent_AlgoliaTags_Helper_Entity_Categoryhelper extends Algolia_Algoliase
 
             if ($this->tagAttribute != '-1') {
                 $this->mapTagAttribute = true;
+            } else {
+                $this->mapTagAttribute = false;
             }
         }
         return $this->tagAttribute;
     }
 
-    protected function shouldMapTagAttribute()
+    public function shouldMapTagAttribute()
     {
         if ($this->mapTagAttribute === null) {
             $this->getTagAttributeMapping();
@@ -40,7 +42,6 @@ class Aligent_AlgoliaTags_Helper_Entity_Categoryhelper extends Algolia_Algoliase
     {
         $categories = parent::getCategoryCollectionQuery($storeId, $categoryIds);
 
-        // Add tag attribute to collectionQuery
         if ($this->shouldMapTagAttribute()) {
             $categories->addAttributeToSelect($this->getTagAttributeMapping());
         }

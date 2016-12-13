@@ -21,5 +21,16 @@
                 </rewrite>
             </algoliasearch>
         </helpers>
+        <events>
+            <algolia_index_settings_prepare>
+                <observers>
+                    <aligent_algoliatags>
+                        <type>singleton</type>
+                        <class>aligent_algoliatags/observer</class>
+                        <method>categoryConfigSaved</method>
+                    </aligent_algoliatags>
+                </observers>
+            </algolia_index_settings_prepare>
+        </events>
     </global>
 </config>
