@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <config>
+    <modules>
+        <Aligent_AlgoliaTags>
+            <version>0.1.0</version>
+        </Aligent_AlgoliaTags>
+    </modules>
     <global>
+        <models>
+            <aligent_algoliatags>
+                <class>Aligent_AlgoliaTags_Model</class>
+            </aligent_algoliatags>
+        </models>
         <helpers>
             <aligent_algoliatags>
                 <class>Aligent_AlgoliaTags_Helper</class>

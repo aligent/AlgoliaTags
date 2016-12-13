@@ -3,7 +3,7 @@
 /**
  * Algolia category attributes field.
  */
-class Aligent_AlgoliaTags_Block_System_Config_Form_Field_CategoryAttributes
+class Aligent_AlgoliaTags_Model_System_Config_Form_Field_CategoryAttributes
 {
 
     /**
@@ -21,7 +21,7 @@ class Aligent_AlgoliaTags_Block_System_Config_Form_Field_CategoryAttributes
 
         $searchableAttributes = $category_helper->getAllAttributes();
         foreach ($searchableAttributes as $key => $label) {
-            $returnArray[] = array('value' => $key, 'label' => $label);
+            $returnArray[] = array('value' => $key, 'label' => $key);
         }
 
         return $returnArray;
