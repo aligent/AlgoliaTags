@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <helpers>
+            <aligent_algoliatags>
+                <class>Aligent_AlgoliaTags_Helper</class>
+            </aligent_algoliatags>
+            <algoliasearch>
+                <rewrite>
+                    <entity_categoryhelper>Aligent_AlgoliaTags_Helper_Entity_Categoryhelper</entity_categoryhelper>
+                </rewrite>
+            </algoliasearch>
+        </helpers>
+    </global>
+</config>
