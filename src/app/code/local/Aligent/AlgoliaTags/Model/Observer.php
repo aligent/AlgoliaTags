@@ -2,6 +2,14 @@
 
 class Aligent_AlgoliaTags_Model_Observer
 {
+
+    /**
+     * Add the _tags attribute as a searchable attribute.
+     * This should only occur for category, however the event is triggered for both Category and Product
+     * Therefore I have added a check to confirm we are not looking at a product config save.
+     *
+     * @param Varien_Event_Observer $observer
+     */
     public function categoryConfigSaved(Varien_Event_Observer $observer)
     {
         $indexSettings = $observer->getIndexSettings();
@@ -16,6 +24,5 @@ class Aligent_AlgoliaTags_Model_Observer
                 $indexSettings->setData('attributesToIndex', $attributesToIndex);
             }
         }
-
     }
 }

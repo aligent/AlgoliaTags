@@ -27,6 +27,12 @@ class Aligent_AlgoliaTags_Helper_Entity_Categoryhelper extends Algolia_Algoliase
         return $this->mapTagAttribute;
     }
 
+    /**
+     * Update the _tags attribute to include the new mapped attribute value before sending to Algolia.
+     *
+     * @param Mage_Catalog_Model_Category $category
+     * @return array
+     */
     public function getObject(Mage_Catalog_Model_Category $category)
     {
         $data = parent::getObject($category);
@@ -38,6 +44,13 @@ class Aligent_AlgoliaTags_Helper_Entity_Categoryhelper extends Algolia_Algoliase
         return $data;
     }
 
+    /**
+     * Include the category attribute in the collection query.
+     *
+     * @param $storeId
+     * @param null $categoryIds
+     * @return Mage_Catalog_Model_Resource_Eav_Mysql4_Category_Collection|Object
+     */
     public function getCategoryCollectionQuery($storeId, $categoryIds = null)
     {
         $categories = parent::getCategoryCollectionQuery($storeId, $categoryIds);
